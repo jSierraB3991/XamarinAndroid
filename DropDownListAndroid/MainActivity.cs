@@ -20,7 +20,7 @@ namespace DropDownListAndroid
             var firstItem = spinner.SelectedItem.ToString();
             spinner.ItemSelected += (s, e) => {
                 if (!spinner.SelectedItem.ToString().Equals(firstItem))
-                    Toast.MakeText(this, "You Have Selected: " + e.Parent.GetItemIdAtPosition(e.Position), ToastLength.Short);
+                    Toast.MakeText(this, "You Have Selected: " + e.Parent.GetItemIdAtPosition(e.Position), ToastLength.Short).Show();
             };
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
