@@ -3,6 +3,7 @@ using Android.OS;
 using Android.Support.V7.App;
 using Android.Runtime;
 using Android.Widget;
+using Android.Content;
 
 namespace SwicthBetweenActivities
 {
@@ -15,6 +16,16 @@ namespace SwicthBetweenActivities
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
+
+            var eName = FindViewById<EditText>(Resource.Id.editTextName);
+            var eEmail = FindViewById<EditText>(Resource.Id.editTextEmail);
+            var btnSend = FindViewById<Button>(Resource.Id.btnSend);
+            btnSend.Click += (s, e) => {
+                var intent = new Intent(this, typeof(RecvActivity));
+                intent.PutExtra("name", eName.Text);
+                intent.PutExtra("email", eEmail.Text);
+                StartActivity(intent);
+            };
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
