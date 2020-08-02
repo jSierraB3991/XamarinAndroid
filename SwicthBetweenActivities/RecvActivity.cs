@@ -1,9 +1,12 @@
-﻿using Android.OS;
-using Android.Support.V7.App;
+﻿using Android.App;
+using Android.Content;
+using Android.OS;
 using Android.Widget;
+
 namespace SwicthBetweenActivities
 {
-    public class RecvActivity: AppCompatActivity
+    [Activity(Label = "RecvActivity")]
+    public class RecvActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -19,7 +22,8 @@ namespace SwicthBetweenActivities
 
 
             var btnBack = FindViewById<Button>(Resource.Id.btnBack);
-            btnBack.Click += (s, e) => {
+            btnBack.Click += (s, e) =>
+            {
                 Finish();
             };
         }
