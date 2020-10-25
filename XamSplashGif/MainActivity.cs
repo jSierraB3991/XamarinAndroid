@@ -1,12 +1,11 @@
-﻿using Android.App;
-using Android.OS;
-using Android.Support.V7.App;
-using Android.Runtime;
-using Android.Widget;
-
-namespace XamSplashGif
+﻿namespace XamSplashGif
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
+    using Android.App;
+    using Android.OS;
+    using Android.Runtime;
+    using Android.Support.V7.App;
+
+    [Activity(Label = "MainActivity", Theme = "@style/AppTheme")]
     public class MainActivity : AppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
