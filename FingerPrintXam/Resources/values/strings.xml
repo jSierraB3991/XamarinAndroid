@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">FingerPrintXam</string>
     <string name="action_settings">Settings</string>
+
+  <string name="textFingerPrint">Please place your finger on the scanner to verify your identity</string>
+  <string name="textHome"> You have successful logged in with fingerprint authentication </string>
+
+
+  <string name="fingerPrintPermissionDisabled">FingerPrint Authentication permission not enabled</string>
+  <string name="fingerPrintNotRegister">Register at least one fingerprint in settings</string>
+  <string name="lockscreenDisabled">Lock screen security not enabled in Settings</string>
+  <string name="fingerprintFailed">Fingerprint Authentication Failed!</string>
+  <string name="fingerprintSuccess">Fingerprint Authentication Successful!</string>
 </resources>
