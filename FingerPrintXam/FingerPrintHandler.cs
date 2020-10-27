@@ -27,6 +27,7 @@
         public override void OnAuthenticationFailed()
         {
             Toast.MakeText(_context, _context.GetString(Resource.String.fingerprintFailed), ToastLength.Short).Show();
+        }
 
         public override void OnAuthenticationSucceeded(FingerprintManager.AuthenticationResult result)
         {
