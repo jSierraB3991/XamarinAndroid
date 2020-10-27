@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FingerPrintXam", "FingerPrintXam.csproj", "{79F68444-9B39-4A7F-ABAB-E7A8406FB831}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79F68444-9B39-4A7F-ABAB-E7A8406FB831}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79F68444-9B39-4A7F-ABAB-E7A8406FB831}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79F68444-9B39-4A7F-ABAB-E7A8406FB831}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{79F68444-9B39-4A7F-ABAB-E7A8406FB831}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79F68444-9B39-4A7F-ABAB-E7A8406FB831}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79F68444-9B39-4A7F-ABAB-E7A8406FB831}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {30F08882-E60A-410C-A92E-EB8A9BA0962D}
+	EndGlobalSection
+EndGlobal
