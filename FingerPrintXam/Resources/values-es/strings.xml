@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name"> FingerPrintXam </string>
+    <string name="action_settings"> Configuraciones </string>
+
+  <string name="textFingerPrint"> Por favor, coloque su dedo en el escaner para verificar su identidad </string>
+  <string name="textHome"> Has sido logueado con la huella digital satisfactoriamente </string>
+
+  <string name="fingerPrintPermissionDisabled">Permiso para usar la huella no habilitado!</string>
+  <string name="fingerPrintNotRegister">Registre al menos una huella en las configuraciones</string>
+  <string name="lockscreenDisabled">Pantalla de seguridad no bloqueada!</string>
+  <string name="fingerprintFailed">Autenticación con la huella fallida!</string>
+  <string name="fingerprintSuccess">Autenticación con la huella satisfactoria!</string>
+</resources>
