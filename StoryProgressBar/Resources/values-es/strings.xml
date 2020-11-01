@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">StoryProgressBar</string>
+    <string name="action_settings"> Configuraiones </string>
+  <string name="story_complete"> Completado </string>
+</resources>
