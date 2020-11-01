@@ -15,8 +15,8 @@
         private Context context;
         private Resources resources;
 
-        public ButtonHelper(int imageResId, int textSize, int pos,
-            string text, string color, RectF clickRegion,
+        public ButtonHelper(int imageResId, int textSize,
+            string text, string color,
             ButtonClickListenerHelper listenerHelper,
             Context context)
         {

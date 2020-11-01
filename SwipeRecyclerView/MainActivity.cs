@@ -7,6 +7,7 @@ using System;
 using SwipeRecyclerView.Model;
 using System.Collections.Generic;
 using SwipeRecyclerView.Adapter;
+using SwipeRecyclerView.Helper;
 
 namespace SwipeRecyclerView
 {
@@ -28,6 +29,8 @@ namespace SwipeRecyclerView
             this.recyclerView.SetLayoutManager(layout);
 
             GenerateItems();
+
+            var swipeHelper = new ItemSwipeHelper(this, recyclerView, 200);
         }
 
         private void GenerateItems()

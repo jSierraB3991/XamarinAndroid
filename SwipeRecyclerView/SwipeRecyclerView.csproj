@@ -64,10 +64,12 @@
     <Compile Include="Adapter\ItemAdapter.cs" />
     <Compile Include="Helper\ButtonClickListenerHelper.cs" />
     <Compile Include="Helper\ButtonHelper.cs" />
+    <Compile Include="Helper\DeleteButtonClick.cs" />
     <Compile Include="Helper\GestureListenerHelper.cs" />
     <Compile Include="Helper\ItemSwipeHelper.cs" />
     <Compile Include="Helper\SwipeHelper.cs" />
     <Compile Include="Helper\TouchListenerHelper.cs" />
+    <Compile Include="Helper\UpdateButtonClick.cs" />
     <Compile Include="Holder\MyViewHolder.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Model\Item.cs" />
