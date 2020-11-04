@@ -1,16 +1,14 @@
 ﻿namespace SqlLiteAndroid
 {
     using Android.App;
-    using Android.OS;
-    using Android.Support.V7.App;
-    using Android.Runtime;
-    using Android.Widget;
-    using System;
-    using System.Net.Sockets;
-    using SqlLiteAndroid.Data;
-    using SqlLiteAndroid.Adapter;
-    using SqlLiteAndroid.Model;
     using Android.Graphics;
+    using Android.OS;
+    using Android.Runtime;
+    using Android.Support.V7.App;
+    using Android.Widget;
+    using SqlLiteAndroid.Adapter;
+    using SqlLiteAndroid.Data;
+    using SqlLiteAndroid.Model;
 
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
@@ -29,7 +27,8 @@
             CreateDatabase();
             SetContext();
             LoadData();
-            listView.ItemClick += (sender, e) => {
+            listView.ItemClick += (sender, e) =>
+            {
                 for (int i = 0; i < listView.Count; i++)
                 {
                     if (e.Position == i)
@@ -81,11 +80,10 @@
             update.Click += (sender, e) =>
             {
                 if (!ValidarData()) return;
-                if (name.Tag==null || string.IsNullOrEmpty(name.Tag.ToString())) {
-                    Toast.MakeText(this, "No ha seleccionado ninguno", ToastLength.Short).Show();
-                    return;
-                }
-                var item = new Item {
+                if (ValideId()) return;
+
+                var item = new Item
+                {
                     Age = age.Text,
                     Email = email.Text,
                     Name = name.Text,
@@ -99,14 +97,13 @@
             delete.Click += (sender, e) =>
             {
                 if (!ValidarData()) return;
-                if (string.IsNullOrEmpty(name.Tag.ToString())) {
-                    Toast.MakeText(this, "No ha seleccionado ninguno", ToastLength.Short).Show();
+                if (ValideId())
                     return;
-                }
-                var item = new Item { 
-                    Age = age.Text, 
-                    Email = email.Text, 
-                    Name = name.Text, 
+                var item = new Item
+                {
+                    Age = age.Text,
+                    Email = email.Text,
+                    Name = name.Text,
                     Id = int.Parse(name.Tag.ToString())
                 };
                 db.DeleteIem(item);
@@ -116,27 +113,33 @@
             };
         }
 
+        private bool ValideId()
+        {
+            if (name.Tag == null || string.IsNullOrEmpty(name.Tag.ToString()))
+            {
+                Toast.MakeText(this, Resource.String.msg_not_select, ToastLength.Short).Show();
+                return true;
+            }
+            return false;
+        }
+
         private bool ValidarData()
         {
-            if(string.IsNullOrEmpty(name.Text) ||
+            if (string.IsNullOrEmpty(name.Text) ||
                 string.IsNullOrEmpty(age.Text) ||
                 string.IsNullOrEmpty(email.Text))
-                {
-                Toast.MakeText(this, "Todos los campos son obligatorios", ToastLength.Short).Show();
+            {
+                Toast.MakeText(this, Resource.String.msg_all_field, ToastLength.Short).Show();
                 return false;
             }
             return true;
         }
 
-        private void CleanData()
-        {
-            name.Text = age.Text = email.Text = string.Empty;
-        }
+        private void CleanData() { name.Text = age.Text = email.Text = string.Empty; }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }

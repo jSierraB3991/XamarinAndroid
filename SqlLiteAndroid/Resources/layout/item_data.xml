@@ -5,20 +5,20 @@
     android:layout_height="match_parent">
     
     <TextView
-        android:text="Name"
+        android:text="@string/txt_enter_name"
         android:id="@+id/tvName"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <TextView
-        android:text="Email"
+        android:text="@string/txt_enter_email"
         android:id="@+id/tvAge"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <TextView
-        android:text="Age"
+        android:text="@string/txt_enter_age"
         android:id="@+id/tvEmail"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"

@@ -9,7 +9,7 @@
 
     public class DatabaseLite
     {
-        string _folder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+        private readonly string _folder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
 
         public bool CreateDatabase()
         {

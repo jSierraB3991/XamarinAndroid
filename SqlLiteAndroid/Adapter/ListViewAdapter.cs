@@ -1,7 +1,5 @@
 ﻿namespace SqlLiteAndroid.Adapter
 {
-    using Android.Content;
-    using Android.Runtime;
     using Android.Support.V7.App;
     using Android.Views;
     using Android.Widget;
@@ -21,10 +19,7 @@
         }
 
 
-        public override Java.Lang.Object GetItem(int position)
-        {
-            return null;
-        }
+        public override Java.Lang.Object GetItem(int position) => null;
 
         public override long GetItemId(int position) => _items[position].Id;
 

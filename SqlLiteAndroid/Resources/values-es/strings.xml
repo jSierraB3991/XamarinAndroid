@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">SqlLiteAndroid</string>
+    <string name="action_settings"> Confirguraciones </string>
+
+  <string name="msg_not_select"> No hay ningun campo seleccionado </string>
+  <string name="msg_all_field"> Todos los campos son requeridos </string>
+
+  <string name="txt_enter_name"> Ingrese su nombre </string>
+  <string name="txt_enter_age"> Ingrese su edad </string>
+  <string name="txt_enter_email"> Ingrese su email </string>
+
+  <string name="btn_add"> Agregar </string>
+  <string name="btn_update"> Actualizar </string>
+  <string name="btn_delete"> Eliminar </string>
+</resources>
