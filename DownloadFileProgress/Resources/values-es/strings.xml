@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">DownloadFileProgress</string>
+    <string name="action_settings"> Configuraciones </string>
+
+  <string name="btn_download_image"> Descargar Imagen </string>
+  <string name="text_please_wait"> Espere un momento </string>
+  <string name="text_download_file"> Descargando el archivo, por favor espere...</string>
+  <string name="text_name_fragment_progress"> progress </string>
+</resources>
