@@ -1,10 +1,10 @@
 ﻿namespace DownloadFileProgress
 {
-    using Android.App;
-    using Android.Content;
     using Android.Graphics.Drawables;
     using Android.OS;
+    using Android.Support.V7.App;
     using Android.Widget;
+    using DownloadFileProgress.Resources.Fragments;
     using Java.IO;
     using Java.Net;
     using System;
@@ -12,12 +12,12 @@
 
     public class DownloadImageFromUrl : AsyncTask<string, string, string>
     {
-        private readonly Context context;
+        private readonly AppCompatActivity context;
         private readonly ImageView imageView;
-        private ProgressDialog progressDialog;
+        private ProgressDialogFragment progressDialog;
         private string fileName;
 
-        public DownloadImageFromUrl(Context context, ImageView imageView)
+        public DownloadImageFromUrl(AppCompatActivity context, ImageView imageView)
         {
             this.context = context;
             this.imageView = imageView;
@@ -26,28 +26,26 @@
 
         protected override void OnPreExecute()
         {
-            progressDialog = new ProgressDialog(context);
-            progressDialog.SetMessage("Download File. Please Wait...");
-            progressDialog.Indeterminate = false;
-            progressDialog.Max = 100;
-            progressDialog.SetProgressStyle(ProgressDialogStyle.Spinner);
-            progressDialog.SetCancelable(true);
-            progressDialog.Show();
+            progressDialog = new ProgressDialogFragment(context.GetString(Resource.String.text_download_file));
+            var tran = context.SupportFragmentManager.BeginTransaction();
+            progressDialog.Cancelable = false;
+            progressDialog.Show(tran, context.GetString(Resource.String.text_name_fragment_progress));
             base.OnPreExecute();
         }
 
         protected override void OnProgressUpdate(params string[] values)
         {
             base.OnProgressUpdate(values);
-            progressDialog.SetProgressNumberFormat(values[0]);
-            progressDialog.Progress = int.Parse(values[0]);
         }
 
         protected override void OnPostExecute([AllowNull] string result)
         {
             var storagePath = Android.OS.Environment.ExternalStorageDirectory.Path;
             var filePath = System.IO.Path.Combine(storagePath, $"{fileName}.jpg");
-            progressDialog.Dismiss();
+            if (progressDialog != null) {
+                progressDialog.Dismiss();
+                progressDialog = null;
+            }
             imageView.SetImageDrawable(Drawable.CreateFromPath(filePath));
         }
 
@@ -55,7 +53,6 @@
         {
             var storagePath = Android.OS.Environment.ExternalStorageDirectory.Path;
             var filePath = System.IO.Path.Combine(storagePath, $"{fileName}.jpg");
-            int count = 0;
             try
             {
                 URL url = new URL(@params[0]);
@@ -67,6 +64,7 @@
 
                 byte[] data = new byte[1024];
                 long total = 0;
+                int count = 0;
                 while ((count = input.Read(data)) != -1)
                 {
                     total += count;

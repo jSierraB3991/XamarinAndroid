@@ -2,5 +2,8 @@
     <string name="app_name">DownloadFileProgress</string>
     <string name="action_settings">Settings</string>
 
-    <string name="btn_download_image"> Download Image </string>
+  <string name="btn_download_image"> Download Image </string>
+  <string name="text_please_wait"> Please Wait </string>
+  <string name="text_download_file">Download File. Please Wait...</string>
+  <string name="text_name_fragment_progress"> progress </string>
 </resources>
