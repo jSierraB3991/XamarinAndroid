@@ -6,4 +6,6 @@
   <string name="text_please_wait"> Please Wait </string>
   <string name="text_download_file">Download File. Please Wait...</string>
   <string name="text_name_fragment_progress"> progress </string>
+  <string name="msg_dowload_by_wifi">Dowload by Wifi</string>
+  <string name="msg_dowload_by_data">Dowload by Mobile Data!</string>
 </resources>
