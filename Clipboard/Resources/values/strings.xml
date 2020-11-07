@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Clipboard</string>
+    <string name="action_settings">Settings</string>
+  <string name="txt_copy_text">Copy Text</string>
+  <string name="txt_paste_text">Paste Text</string>
+  <string name="msg_copy_text">Text Copy</string>
+  <string name="msg_paste_text">Text Paste</string>
+</resources>
