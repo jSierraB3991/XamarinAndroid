@@ -29,7 +29,9 @@ namespace InfiniteCycleView
                 Toast.MakeText(this, response.Message, ToastLength.Short).Show();
                 return;
             }
+            Toast.MakeText(this, response.Result[0].Name, ToastLength.Short).Show();
             LoadData(response.Result);
+
         }
 
         public void LoadData(List<Model.Model> data)

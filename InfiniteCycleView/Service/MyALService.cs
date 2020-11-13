@@ -21,7 +21,18 @@
                 if (model == null) model = new List<Model>();
                 model.AddRange(response.Favorites.Manga.Select(fa => new Model { Id = fa.MalId, ImageUrl = fa.ImageUrl, Name = fa.Name }).ToList());
 
-                return new Response<List<Model>> { IsSuccess = true, Result = model.ToList() };
+                model.ForEach(m => {
+                    m.Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. " +
+                    "Mauris rutrum tortor non lorem posuere, quis aliquet libero viverra. " +
+                    "Etiam ac efficitur turpis, eget bibendum metus. Nullam est felis, consectetur sed dapibus eu, fermentum ac nulla. " +
+                    "Nulla ornare, nibh eu consequat faucibus, lectus orci imperdiet ex, eget laoreet ex dolor et ex. " +
+                    "Pellentesque mattis molestie aliquam. Aliquam pretium augue ut dolor semper, ut venenatis metus aliquet. " +
+                    "Nunc congue, mi at pretium imperdiet, nibh ex dignissim leo, commodo placerat metus sapien at orci. " +
+                    "Phasellus in faucibus enim. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. " +
+                    "Etiam dictum odio risus, placerat feugiat sapien placerat at. In id velit sed tortor sagittis commodo.";
+                });
+
+                return new Response<List<Model>> { IsSuccess = true, Result = model };
             }
             catch (System.Exception ex) {
                 return new Response<List<Model>> { IsSuccess = false, Message = ex.Message };
