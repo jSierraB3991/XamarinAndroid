@@ -4,5 +4,6 @@
 
 
     <string name="data_url_api">https://api.jikan.moe/v3</string>
-    <string name="msg_no_internet_conection">No Internet Conection</string>
+  <string name="msg_no_internet_conection">No Internet Conection</string>
+  <string name="msg_click_fav">Add {0} in Favorites</string>
 </resources>
