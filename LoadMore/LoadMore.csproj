@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adapter\WaifuPostAdapter.cs" />
+    <Compile Include="Listener\LoadMoreListener.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Model\Publish.cs" />
     <Compile Include="Model\RequestPublish.cs" />
