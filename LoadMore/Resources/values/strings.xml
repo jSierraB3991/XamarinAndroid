@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">LoadMore</string>
+    <string name="action_settings">Settings</string>
+
+  <string name="resource_url_api">http://waifuapi.somee.com/api</string>
+  <string name="msg_no_internet_conection">No internet conection</string>
+  <string name="msg_please_wait">Please Wait ...</string>
+</resources>
