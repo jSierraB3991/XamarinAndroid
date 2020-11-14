@@ -2,12 +2,11 @@
 {
     using Android.App;
     using Android.OS;
-    using Android.Support.V7.App;
     using Android.Runtime;
-    using JP.Shts.Android.Storiesprogressview;
+    using Android.Support.V7.App;
     using Android.Widget;
+    using JP.Shts.Android.Storiesprogressview;
     using static JP.Shts.Android.Storiesprogressview.StoriesProgressView;
-    using System.Threading.Tasks;
 
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity, IStoriesListener
@@ -36,16 +35,13 @@
             this._stories.SetStoryDuration(4000L);
             this._stories.SetStoriesListener(this);
             this._image = FindViewById<ImageView>(Resource.Id.imageView);
-            _image.Click += delegate {
-                _stories.Skip();
-            };
+            _image.Click += delegate { _stories.Skip(); };
             _image.SetImageResource(_resource[_counter]);
             this._stories.StartStories();
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 
@@ -55,19 +51,10 @@
             base.OnDestroy();
         }
 
-        public void OnComplete()
-        {
-            Toast.MakeText(this, Resource.String.story_complete, ToastLength.Short).Show();
-        }
+        public void OnComplete() { Toast.MakeText(this, Resource.String.story_complete, ToastLength.Short).Show(); }
 
-        public void OnNext()
-        {
-            _image.SetImageResource(_resource[++_counter]);
-        }
+        public void OnNext() { _image.SetImageResource(_resource[++_counter]); }
 
-        public void OnPrev()
-        {
-            _image.SetImageResource(_resource[--_counter]);
-        }
+        public void OnPrev() { _image.SetImageResource(_resource[--_counter]); }
     }
 }
