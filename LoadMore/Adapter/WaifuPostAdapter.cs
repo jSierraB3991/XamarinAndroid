@@ -12,7 +12,7 @@ namespace LoadMore.Adapter
     internal class WaifuPostAdapter : RecyclerView.Adapter
     {
         private readonly Context _ctx;
-        private readonly List<Publish> _data;
+        public List<Publish> _data;
 
         public WaifuPostAdapter(Context ctx, List<Publish> data)
         {
@@ -21,6 +21,21 @@ namespace LoadMore.Adapter
         }
 
         public override int ItemCount => _data.Count;
+
+        public void AddAllWaifu(List<Publish> waifus)
+        {
+            waifus.ForEach(Add);
+        }
+
+        public int GetLastItemId() 
+        {
+            return _data[_data.Count - 1].Id;
+        }
+        private void Add(Publish item)
+        {
+            _data.Add(item);
+            NotifyItemInserted(_data.Count - 1);
+        }
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
@@ -39,7 +54,7 @@ namespace LoadMore.Adapter
     internal class WaifuHolder : RecyclerView.ViewHolder
     {
         public ImageView ImageWaifu { get; set; }
-        
+
         public TextView NameText { get; set; }
 
         public WaifuHolder(View itemView) : base(itemView)

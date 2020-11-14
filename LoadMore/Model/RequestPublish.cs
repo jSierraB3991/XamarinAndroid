@@ -8,7 +8,7 @@
 
         public int CurrentPage { get; set; }
 
-        public int TotalPage { get; set; }
+        public int TotalPages { get; set; }
 
         public bool HasPreviusPage { get; set; }
 
