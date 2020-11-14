@@ -40,12 +40,9 @@
             Picasso.Get().Load(_favorites[position].ImageUrl).Into(image);
             title.Text = _favorites[position].Name;
             description.Text = _favorites[position].Description;
-            view.Click += delegate
-            {
-                Toast.MakeText(_ctx, _favorites[position].Name, ToastLength.Short).Show();
-            };
-            btnFloatin.Click += delegate
-            {
+
+            view.Click += delegate { Toast.MakeText(_ctx, _favorites[position].Name, ToastLength.Short).Show(); };
+            btnFloatin.Click += delegate {
                 var msg = string.Format(_ctx.GetString(Resource.String.msg_click_fav), _favorites[position].Name);
                 Toast.MakeText(_ctx, msg, ToastLength.Short).Show();
             };
