@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/pokemon_gradient"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+    <android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textViewCount"
+                android:layout_gravity="center_horizontal"
+                android:textSize="20dp"
+                android:padding="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="All Pokemons is: 0"
+            />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerViewPoke"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        
+        </LinearLayout>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+</LinearLayout>
