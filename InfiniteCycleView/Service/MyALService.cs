@@ -18,9 +18,7 @@
                 IRefitService service = RestService.For<IRefitService>(ctx.GetString(Resource.String.data_url_api));
                 var response = await service.GetUser(user);
                 var model = response.Favorites.Anime.Select(fa => new Model { Id = fa.MalId, ImageUrl = fa.ImageUrl, Name = fa.Name }).ToList();
-                if (model == null) model = new List<Model>();
-                model.AddRange(response.Favorites.Manga.Select(fa => new Model { Id = fa.MalId, ImageUrl = fa.ImageUrl, Name = fa.Name }).ToList());
-
+                
                 model.ForEach(m => {
                     m.Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. " +
                     "Mauris rutrum tortor non lorem posuere, quis aliquet libero viverra. " +

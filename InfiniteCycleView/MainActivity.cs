@@ -41,7 +41,6 @@
             }
             Toast.MakeText(this, response.Result[0].Name, ToastLength.Short).Show();
             LoadData(response.Result);
-            await Task.Delay(10 * 1000);
             dialog.Dismiss();
         }
 
